@@ -1,0 +1,11 @@
+config:
+    name: "demo testsuite"
+    variables: {}
+
+testcases:
+    -
+        name: case1
+        testcase: testcases/demo_testcase.yml
+    -
+        name: case2
+        testcase: testcases/demo_testcase.yml
