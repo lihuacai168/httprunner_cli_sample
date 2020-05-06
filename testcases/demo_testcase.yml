@@ -1,0 +1,29 @@
+
+config:
+    name: "demo testcase"
+    variables: {}
+
+teststeps:
+-
+    name: /api/user/login/
+    api: api/login.yml
+    variables: {}
+    validate:
+        -   eq:
+                - status_code
+                - 200
+        -   eq:
+                - headers.Content-Type
+                - application/json
+        -   eq:
+                - content.code
+                - '0001'
+        -   eq:
+                - content.success
+                - true
+        -   eq:
+                - content.msg
+                - login success
+        -   eq:
+                - content.user
+                - test
