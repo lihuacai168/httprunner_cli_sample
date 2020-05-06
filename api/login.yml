@@ -1,0 +1,19 @@
+base_url: http://119.23.50.82:8000
+name: /api/user/login/
+request:
+  headers:
+      Content-Type: application/json;charset=UTF-8
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36
+  json:
+      password: ${ENV(Password)}
+      username: ${ENV(UserName)}
+  method: POST
+  url: /api/user/login/
+validate:
+  -   eq:
+          - status_code
+          - 200
+  -   eq:
+          - content.msg
+          - "login success"
